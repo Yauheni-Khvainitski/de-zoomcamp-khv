@@ -1,0 +1,37 @@
+]Question 1
+
+Answer:
+2019-01-01
+Because we need to make a catchup for each of the month 
+from 2019-01-01, and take DAG execution date
+
+
+Question 2
+
+Answer:
+Monthly
+Because it is enough to start it once a month and get data for finished month
+
+DAG yellow_data_gs_parquet.py
+
+
+Question 3
+
+Answer
+30 DAGs are green after finishing everything. 1 datafile is "dirty" (for 2020-01-01)
+
+- added sep directory in GCS for yellow_trip_data
+- added wildcard to create external table on all the files in yellow_trip_data
+
+DAG fhv_data_gs_parquet.py
+
+
+
+Question 4
+
+Answer
+Once
+This a mapping. So, only in case of changes should be reloaded with changed or additional data
+
+DAG zones_lookup_gs_parquet.py
+
